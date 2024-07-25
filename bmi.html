@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="./index.js"></script>
+       
+    </head>
+    <body>
+        <!-- Js Part -->
+
+        <script>
+            function calculateBMI(weight, height) {
+
+// Ensure height is not zero to avoid division by zero
+if (height === 0 || height === "" ) {
+    document.write("Height cannot be zero.");
+    return null;
+}
+// Calculate BMI
+const bmi = weight * (10000) / (height * height);
+
+return bmi;
+}
+
+// Example usage:
+
+function BmiDisplay(){
+
+  
+  const weight = parseFloat(document.getElementById("weight").value); // in kilograms
+  const height = parseFloat(document.getElementById("height").value)  // in meters
+  const bmiResult =calculateBMI(weight, height);
+  const bmiElement = document.getElementById("BMI");
+  const fatElement = document.getElementById("fat");
+
+  if (bmiResult !== null) {
+    bmiElement.value = bmiResult.toFixed(2);
+if(bmiResult < 18.5){
+        fatElement.value = "Underweight";
+} else if( bmiResult >= 18.5 && bmiResult <= 24.9){
+    fatElement.value=" Normal"
+}else{
+   fatElement.value= "Overweight"
+}
+  }else {
+    bmiElement.value = "";
+    fatElement.value = "";
+}
+}
+
+        </script>
+
+
+        <!--  CSS Part -->
+
+        <style>
+            
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    background-image: url('./bmi.jpg');
+    background-repeat: repeat;
+    align-items: center;
+    height: 670px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bmii{
+    text-align: center ;
+    margin: 5px;
+    padding: 5px;
+    color:rgb(196, 8, 155);
+    background-color: white;
+    font-size: 30px;
+}
+.bmi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+
+}
+.age{
+    font-size: 20px;
+    font-weight: bold   ;
+}
+.gender{
+    padding: 3px;
+    font-size: 18px;
+}
+.gen{
+    font-weight: bold;
+    font-size: 20px;
+}
+.height,.weight {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.submit{
+    background-color:rgb(196, 8, 155);
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.w{
+  font-size: 20px;
+}
+.border{
+    border: 1px solid black;
+    padding: 50px;
+}
+
+        </style>
+
+        <!-- Html Part -->
+
+
+        <section class="main">
+            <h1 class="bmii">BMI Calculator</h1>
+            <div class="box">
+                
+                    <div class="bmi">
+                        <div class="border">
+                            
+                <label for="age" class="age">Age:</label> <br> 
+                <input type="number" id="age" name="age" class="w" placeholder="Eg:20"  > <br>
+                <br>
+                
+                <label for="gender" class="gen">Gender:</label> <br> 
+                
+            <select name="gender" id="gender" class="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select><br>
+            <br>
+            
+            <label for="weight" class="weight">Weight(kg):</label> <br> 
+            <input type="number" id="weight" name="weight" class="w" placeholder="Eg:50"  > <br>
+            <br>
+            
+            <label for="height" class="height">Height(cm):</label> <br>
+            <input type="number" id="height" name="height" class="w" placeholder="Eg:162" > <br>
+            <br>
+            <button type="submit" onclick="BmiDisplay()" id="submit" class="submit">Calculate</button>
+        </div>
+        
+    </div>
+    <br>
+    <div class="bmi ">
+                <div class="border">
+                    
+                    <label for="BMI" class="height">BMI:</label> <br>
+                    <input type="number" name="" id="BMI" class="w" readonly>
+                    <br>
+                    <label for="BMI" class="height">Result:</label> <br>
+                    <input type="text" name="" id="fat" class="w" readonly>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    </body>
+    </html>
