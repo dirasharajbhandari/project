@@ -135,7 +135,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="numplate" required><br/>
 
 <label>Date:</label>
-<input type="date" name="date" required min="<?= date('Y-m-d') ?>"><br/>
+
+<input type="date" name="date" required 
+       min="<?= date('Y-m-d') ?>" 
+       max="<?= date('Y-m-d') ?>"><br/>
+
 
 
         <label>Start Time:</label>

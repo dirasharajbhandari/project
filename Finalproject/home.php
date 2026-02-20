@@ -40,7 +40,7 @@ require('Connection.php');
           <h1 class="hero-title">Find Your Perfect Parking Spot</h1>
           <p class="hero-subtitle">Secure, convenient, and affordable parking solutions in prime locations. Reserve your spot in seconds and park with confidence.</p>
           <div class="hero-buttons">
-            <button class="btn btn-primary"><a href="signup.php">Reserve Now</a></button>
+            <button class="btn btn-primary"><a href="login.php">Reserve Now</a></button>
             <button class="btn btn-secondary">Learn More</button>
           </div>
         </div>
